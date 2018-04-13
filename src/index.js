@@ -1,3 +1,8 @@
-const $ = require('jquery');
+import $ from 'jquery';
+import './style.scss';
 
-$('#main').html('Here we go!');
+let numSeconds = 0;
+setInterval(() => {
+  numSeconds += 1;
+  $('#main').html(`You have been on this page for ${numSeconds} seconds.`);
+}, 1000);
