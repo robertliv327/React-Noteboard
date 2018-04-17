@@ -1,5 +1,6 @@
 $fontcolor:  rgb(10%, 10%, 10%);
 $backgroundcolor: rgb(98%, 98%, 98%);
+$notecolor: #FCF3CF;
 
 body {
   font-family: "Roboto", sans-serif;
@@ -9,4 +10,26 @@ body {
   margin-right: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.note {
+  width: 200px;
+  height: 250px;
+  padding: 15px;
+  box-shadow: 1px 1px 5px #999;
+  background-color: $notecolor;
+  .note-header {
+    display: flex;
+    justify-content: space-between;
+    .note-title {
+      font-size: 20px;
+      margin: 0px;
+    }
+    i {
+      padding-left: 8px;
+    }
+  }
+  .note-mover {
+    cursor: pointer;
+  }
 }

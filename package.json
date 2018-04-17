@@ -46,6 +46,7 @@
     "lodash.debounce": "^4.0.8",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-draggable": "^3.0.5",
     "react-router": "^4.2.0"
   }
 }

@@ -12,10 +12,13 @@ class App extends Component {
 
     };
   }
+  addNote = (text) => {
+
+  }
   render() {
     return (
       <div>
-        <CreateNote />
+        <CreateNote onCreate={this.addNote} />
         <div id="note-section">
           <Note />
         </div>
