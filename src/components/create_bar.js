@@ -27,8 +27,8 @@ class CreateBar extends Component {
   render() {
     return (
       <div id="input-area">
-        <input placeholder="New Note Title" onChange={this.onTitleChange} value={this.state.requestedTitle} />
-        <input placeholder="New Note Content" onChange={this.onContentChange} value={this.state.requestedContent} />
+        <input className="input" placeholder="New Note Title" onChange={this.onTitleChange} value={this.state.requestedTitle} />
+        <input className="input" placeholder="New Note Content" onChange={this.onContentChange} value={this.state.requestedContent} />
         <button className="button" type="button" name="button" onClick={this.onSubmit}>Create Note</button>
       </div>
     );

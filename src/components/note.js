@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
+import marked from 'marked';
+import Textarea from 'react-textarea-autosize';
 
 class Note extends Component {
   constructor(props) {
@@ -49,7 +51,7 @@ class Note extends Component {
               <i className="note-mover fa fa-arrows-alt" />
             </div>
           </div>
-          <textarea className="note-content border" placeholder="Edit text" onChange={this.onContentChange} value={this.state.text} />
+          <Textarea className="note-content border" placeholder="Edit text" onChange={this.onContentChange} value={this.state.text} />
         </div>
       );
     } else {
@@ -63,7 +65,7 @@ class Note extends Component {
               <i className="note-mover fa fa-arrows-alt" />
             </div>
           </div>
-          <p className="note-content">{this.state.text}</p>
+          <div className="note-content" dangerouslySetInnerHTML={{ __html: marked(this.state.text || '') }} />
         </div>
       );
     }

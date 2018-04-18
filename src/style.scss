@@ -12,6 +12,30 @@ body {
   margin-bottom: 20px;
 }
 
+.input {
+  font-size: 14px;
+  padding: 7px;
+  color: black;
+  margin-right: 5px;
+  min-width: 200px;
+  border: 1px solid palevioletred;
+  border-radius: 3px;
+}
+.button {
+  border: 1px solid palevioletred;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 7px;
+  color: black;
+  border-color: #7DCEA0;
+  background-color: #7DCEA0;
+  width: 100px;
+}
+.button:hover {
+  background-color: #52BE80;
+  border-color: #52BE80;
+  cursor: pointer;
+}
 .note {
   display: flex;
   flex-direction: column;
@@ -42,10 +66,13 @@ body {
   }
   .note-content {
     font-size: 15px;
-    height: 150px;
+    min-height: 150px;
     background-color: transparent;
     margin-top: 10px;
     max-width: 490px;
+    p {
+      margin-top: 0;
+    }
   }
   .border {
     border-color: #99A3A4;
