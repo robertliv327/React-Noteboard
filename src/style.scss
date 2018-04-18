@@ -13,8 +13,14 @@ body {
 }
 
 .note {
-  width: 200px;
-  height: 250px;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  min-width: 150px;
+  max-width: 500px;
+  word-break: break-all;
+  word-wrap: break-word;
+  position: absolute;
   padding: 15px;
   box-shadow: 1px 1px 5px #999;
   background-color: $notecolor;
@@ -24,12 +30,25 @@ body {
     .note-title {
       font-size: 20px;
       margin: 0px;
+      background-color: transparent;
     }
     i {
       padding-left: 8px;
+      cursor: pointer;
+    }
+    i:hover{
+      color: blue;
     }
   }
-  .note-mover {
-    cursor: pointer;
+  .note-content {
+    font-size: 15px;
+    height: 150px;
+    background-color: transparent;
+    margin-top: 10px;
+    max-width: 490px;
+  }
+  .border {
+    border-color: #99A3A4;
+    border-width: 1px;
   }
 }
