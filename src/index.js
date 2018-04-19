@@ -28,18 +28,21 @@ class App extends Component {
       y: 30 + (this.state.idCount * 5),
     };
     this.firebasedb.addNote(noteObject);
+    // from part 1
     // this.setState({
     //   notes: this.state.notes.set(fireKey, noteObject),
     // }, () =>
     this.setState({ idCount: this.state.idCount + 1 });
   }
   deleteNote = (id) => {
+    // from part 1
     // this.setState({
     //   notes: this.state.notes.delete(id),
     // });
     this.firebasedb.deleteNote(id);
   }
   updateNote = (id, fields) => {
+    // from part 1
     // this.setState({
     //   notes: this.state.notes.update(id, (n) => { return Object.assign({}, n, fields); }),
     // });

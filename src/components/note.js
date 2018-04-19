@@ -4,6 +4,14 @@ import marked from 'marked';
 import Textarea from 'react-textarea-autosize';
 
 class Note extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {
+      title: nextProps.title,
+      text: nextProps.text,
+      x: nextProps.x,
+      y: nextProps.y,
+    };
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -14,16 +22,18 @@ class Note extends Component {
       id: this.props.id,
       isEditing: false,
     };
+    console.log('in constructor');
     this.onDrag = this.onDrag.bind(this);
     this.onTrashClick = this.onTrashClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onSave = this.onSave.bind(this);
     this.onContentChange = this.onContentChange.bind(this);
+    this.updateNote = this.updateNote.bind(this);
   }
   onDrag(e, ui) {
     this.setState({ x: ui.x, y: ui.y });
-    this.props.onUpdate(this.state.id, { x: this.state.x, y: this.state.y });
+    this.updateNote();
   }
   onTrashClick(event) {
     this.props.onDelete(this.state.id);
@@ -38,7 +48,21 @@ class Note extends Component {
     this.setState({ text: event.target.value });
   }
   onSave(event) {
-    this.setState({ isEditing: false });
+    this.setState({
+      isEditing: false,
+      title: this.state.tempTitle,
+      text: this.state.tempText,
+    });
+    this.updateNote();
+  }
+  updateNote() {
+    const fields = {
+      title: this.state.title,
+      text: this.state.text,
+      x: this.state.x,
+      y: this.state.y,
+    };
+    this.props.onUpdate(this.state.id, fields);
   }
   renderNote() {
     if (this.state.isEditing) {
