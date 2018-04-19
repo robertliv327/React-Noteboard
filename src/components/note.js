@@ -23,6 +23,7 @@ class Note extends Component {
   }
   onDrag(e, ui) {
     this.setState({ x: ui.x, y: ui.y });
+    this.props.onUpdate(this.state.id, { x: this.state.x, y: this.state.y });
   }
   onTrashClick(event) {
     this.props.onDelete(this.state.id);
