@@ -17,6 +17,7 @@ class CreateBar extends Component {
   onContentChange(event) {
     this.setState({ requestedContent: event.target.value });
   }
+  // on "Create Note" click, use callback from props to create new note in parent
   onSubmit(event) {
     this.props.onCreate(this.state.requestedTitle, this.state.requestedContent);
     this.setState({

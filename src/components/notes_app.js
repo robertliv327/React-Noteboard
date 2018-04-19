@@ -13,11 +13,13 @@ class App extends Component {
     };
     this.firebasedb = new Datastore(this.props.db);
   }
+  // call to firebase to pull in data on mount
   componentDidMount() {
     this.firebasedb.fetchNotes((notes) => {
       this.setState({ notes: Immutable.Map(notes) });
     });
   }
+  // add note via firebase
   addNote = (title, content) => {
     const noteObject = {
       title,
@@ -32,6 +34,7 @@ class App extends Component {
     // }, () =>
     this.setState({ idCount: this.state.idCount + 1 });
   }
+  // delete note via firebase
   deleteNote = (id) => {
     // from part 1
     // this.setState({
@@ -39,6 +42,7 @@ class App extends Component {
     // });
     this.firebasedb.deleteNote(id);
   }
+  // update note via firebase
   updateNote = (id, fields) => {
     // from part 1
     // this.setState({

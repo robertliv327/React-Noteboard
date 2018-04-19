@@ -4,6 +4,8 @@ import marked from 'marked';
 import Textarea from 'react-textarea-autosize';
 
 class Note extends Component {
+  // needed because constructor wasn't being called on re-render of note...
+  // before adding this, props were being passed in but state was not updated
   static getDerivedStateFromProps(nextProps, prevState) {
     return {
       title: nextProps.title,
@@ -46,6 +48,7 @@ class Note extends Component {
   onContentChange(event) {
     this.setState({ text: event.target.value });
   }
+  // when user is finished editing...
   onSave(event) {
     this.setState({
       isEditing: false,
@@ -54,6 +57,7 @@ class Note extends Component {
     });
     this.updateNote();
   }
+  // create fields object and pass up to parent for update of note
   updateNote() {
     const fields = {
       title: this.state.title,
@@ -65,6 +69,7 @@ class Note extends Component {
   }
   renderNote() {
     if (this.state.isEditing) {
+      // render note in editing mode... with textarea and input fields in place of title and text
       return (
         <div className="note">
           <div className="note-header">
@@ -79,6 +84,7 @@ class Note extends Component {
         </div>
       );
     } else {
+      // render note as normal
       return (
         <div className="note">
           <div className="note-header">

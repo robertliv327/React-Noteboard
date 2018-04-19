@@ -2,32 +2,25 @@
 
 class Datastore {
   constructor(db) {
-    // Initialize Firebase
-    // const config = {
-    //   apiKey: 'AIzaSyB618ggS9LurP3QgBdpevTG_rpbrQoCV_4',
-    //   authDomain: 'react-notes-3a264.firebaseapp.com',
-    //   databaseURL: 'https://react-notes-3a264.firebaseio.com',
-    //   projectId: 'react-notes-3a264',
-    //   storageBucket: 'react-notes-3a264.appspot.com',
-    //   messagingSenderId: '472779733172',
-    // };
-    // firebase.initializeApp(config);
-    // Get a reference to the database service
-    // this.databasae = firebase.database();
+    // db came from Firebase logic in index.js - passed in b/c need to use here
     this.database = db;
   }
+  // fetch notes from db on update
   fetchNotes(callback) {
     this.database.ref('notes').on('value', (snapshot) => {
       const newNoteState = snapshot.val();
       callback(newNoteState);
     });
   }
+  // add note to db
   addNote(newNote) {
     this.database.ref('notes').push(newNote);
   }
+  // delete note from db
   deleteNote(id) {
     this.database.ref('notes').child(id).remove();
   }
+  // update note to db
   updateNote(id, fields) {
     this.database.ref('notes').child(id).update(fields);
   }

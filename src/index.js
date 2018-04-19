@@ -1,4 +1,3 @@
-// Import FirebaseAuth and firebase.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
@@ -16,8 +15,10 @@ const config = {
   messagingSenderId: '472779733172',
 };
 firebase.initializeApp(config);
+// pull database into variable that will later be passed via props to NoteApp
 const db = firebase.database();
 
+// class adapted from https://github.com/firebase/firebaseui-web-react
 class SignInScreen extends React.Component {
   // The component's Local state.
   state = {
@@ -48,6 +49,7 @@ class SignInScreen extends React.Component {
     },
   };
 
+  // render authentification if not signed in; render app otherwise
   render() {
     if (!this.state.isSignedIn) {
       return (

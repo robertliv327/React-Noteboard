@@ -13,6 +13,8 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+// contains authentification menu...
 #sign-in-box {
   margin: auto;
   margin-top: 100px;
@@ -25,6 +27,8 @@ body {
     text-align: center;
   }
 }
+
+// contains create_bar on left and signout button on right
 .container {
   display: flex;
   justify-content: space-between;
@@ -53,6 +57,8 @@ body {
   border-color: $hovercolor;
   cursor: pointer;
 }
+
+// all css for note component
 .note {
   display: flex;
   flex-direction: column;
