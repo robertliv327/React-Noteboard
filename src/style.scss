@@ -1,6 +1,8 @@
 $fontcolor:  rgb(10%, 10%, 10%);
 $backgroundcolor: rgb(98%, 98%, 98%);
 $notecolor: #FCF3CF;
+$buttoncolor: #7DCEA0;
+$hovercolor: #52BE80;
 
 body {
   font-family: "Roboto", sans-serif;
@@ -11,7 +13,22 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
+#sign-in-box {
+  margin: auto;
+  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 30px;
+  width: 500px;
+  background-color: #F9E79F;
+  .sign-in-text {
+    text-align: center;
+  }
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 .input {
   font-size: 14px;
   padding: 7px;
@@ -27,13 +44,13 @@ body {
   font-size: 14px;
   padding: 7px;
   color: black;
-  border-color: #7DCEA0;
-  background-color: #7DCEA0;
-  width: 100px;
+  border-color: $buttoncolor;
+  background-color: $buttoncolor;
+  // width: 100px;
 }
 .button:hover {
-  background-color: #52BE80;
-  border-color: #52BE80;
+  background-color: $hovercolor;
+  border-color: $hovercolor;
   cursor: pointer;
 }
 .note {
@@ -61,7 +78,7 @@ body {
       cursor: pointer;
     }
     i:hover{
-      color: blue;
+      color: #D35400;
     }
   }
   .note-content {

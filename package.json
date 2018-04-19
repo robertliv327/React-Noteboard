@@ -42,6 +42,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^4.12.1",
+    "firebaseui": "^2.7.0",
     "immutable": "^3.8.2",
     "jquery": "^3.3.1",
     "lodash.debounce": "^4.0.8",
@@ -49,6 +50,7 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-draggable": "^3.0.5",
+    "react-firebaseui": "^1.2.3",
     "react-router": "^4.2.0",
     "react-textarea-autosize": "^6.1.0"
   }

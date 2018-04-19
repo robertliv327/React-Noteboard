@@ -22,7 +22,6 @@ class Note extends Component {
       id: this.props.id,
       isEditing: false,
     };
-    console.log('in constructor');
     this.onDrag = this.onDrag.bind(this);
     this.onTrashClick = this.onTrashClick.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
@@ -50,8 +49,8 @@ class Note extends Component {
   onSave(event) {
     this.setState({
       isEditing: false,
-      title: this.state.tempTitle,
-      text: this.state.tempText,
+      title: this.state.title,
+      text: this.state.text,
     });
     this.updateNote();
   }
